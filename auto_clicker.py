@@ -37,8 +37,7 @@ def find_image(template, image=None):
 def click_image(template, image=None):
     if image is None:
         image = screenshot()
-    pos = find_image(template, image)
-    if pos:
+    if pos := find_image(template, image):
         old_pos = pyautogui.position()
         pyautogui.click(*pos)
         pyautogui.moveTo(old_pos)
